@@ -31,6 +31,8 @@ class MainTabBarViewController: UITabBarController {
         DownloadsVC.tabBarItem.image = UIImage(systemName: "arrow.down.to.line")
         DownloadsVC.title = "Downloads"
         
+        tabBar.tintColor = .label   //Colour used for text labels
+        
         setViewControllers([HomeVC, UpcomingVC, SearchVC, DownloadsVC], animated: true)
     }
 
