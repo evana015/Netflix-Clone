@@ -18,6 +18,19 @@ class MainTabBarViewController: UITabBarController {
         let SearchVC = UINavigationController(rootViewController: SearchViewController())
         let DownloadsVC = UINavigationController(rootViewController: DownloadsViewController())
         
+        //Icons found from SF Symbols
+        HomeVC.tabBarItem.image = UIImage(systemName: "house")
+        HomeVC.title = "Home"
+        
+        UpcomingVC.tabBarItem.image = UIImage(systemName: "play.circle")
+        UpcomingVC.title = "Coming Soon"
+        
+        SearchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        SearchVC.title = "Top Search"
+        
+        DownloadsVC.tabBarItem.image = UIImage(systemName: "arrow.down.to.line")
+        DownloadsVC.title = "Downloads"
+        
         setViewControllers([HomeVC, UpcomingVC, SearchVC, DownloadsVC], animated: true)
     }
 
