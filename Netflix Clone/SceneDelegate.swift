@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = MainTabBarViewController()
         window?.makeKeyAndVisible()
-        // adding to repo
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
