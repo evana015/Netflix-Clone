@@ -9,6 +9,15 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
+    private let playButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Play", for: .normal)
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 1
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private let heroImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -31,6 +40,18 @@ class HeroHeaderUIView: UIView {
         super.init(frame: frame)
         addSubview(heroImageView)
         addGradient()
+        addSubview(playButton)
+        applyConstraints()
+    }
+    
+    private func applyConstraints() {
+        let playButtonContraints = [
+            playButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
+            playButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+            playButton.widthAnchor.constraint(equalToConstant: 100)
+        ]
+        
+        NSLayoutConstraint.activate(playButtonContraints)
     }
     
     override func layoutSubviews() {
