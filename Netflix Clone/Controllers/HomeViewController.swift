@@ -35,8 +35,12 @@ class HomeViewController: UIViewController {
 //Using extension to keep code clean
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 20   //Setting to 20 secetions
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20   //Setting to 20 rows
+        return 1    //1 row per section
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
