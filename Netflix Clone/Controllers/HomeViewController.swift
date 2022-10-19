@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     
     private let homeFeedTable: UITableView = {
         
-        let table = UITableView()
+        let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }() //<- Anonymous Closure
