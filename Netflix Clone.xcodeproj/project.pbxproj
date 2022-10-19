@@ -12,6 +12,10 @@
 		4A89BB652900011900916061 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB642900011900916061 /* MainTabBarViewController.swift */; };
 		4A89BB6A2900011B00916061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A89BB692900011B00916061 /* Assets.xcassets */; };
 		4A89BB6D2900011B00916061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A89BB6B2900011B00916061 /* LaunchScreen.storyboard */; };
+		4A89BB762900038A00916061 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB752900038A00916061 /* HomeViewController.swift */; };
+		4A89BB78290003BA00916061 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB77290003BA00916061 /* UpcomingViewController.swift */; };
+		4A89BB7A290003E700916061 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB79290003E700916061 /* SearchViewController.swift */; };
+		4A89BB7C2900040700916061 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB7B2900040700916061 /* DownloadsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		4A89BB692900011B00916061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A89BB6C2900011B00916061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A89BB6E2900011B00916061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A89BB752900038A00916061 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4A89BB77290003BA00916061 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		4A89BB79290003E700916061 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4A89BB7B2900040700916061 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		4A89BB5F2900011900916061 /* Netflix Clone */ = {
 			isa = PBXGroup;
 			children = (
+				4A89BB742900034300916061 /* Controllers */,
 				4A89BB602900011900916061 /* AppDelegate.swift */,
 				4A89BB622900011900916061 /* SceneDelegate.swift */,
 				4A89BB642900011900916061 /* MainTabBarViewController.swift */,
@@ -62,6 +71,17 @@
 				4A89BB6E2900011B00916061 /* Info.plist */,
 			);
 			path = "Netflix Clone";
+			sourceTree = "<group>";
+		};
+		4A89BB742900034300916061 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A89BB752900038A00916061 /* HomeViewController.swift */,
+				4A89BB77290003BA00916061 /* UpcomingViewController.swift */,
+				4A89BB79290003E700916061 /* SearchViewController.swift */,
+				4A89BB7B2900040700916061 /* DownloadsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A89BB7A290003E700916061 /* SearchViewController.swift in Sources */,
 				4A89BB652900011900916061 /* MainTabBarViewController.swift in Sources */,
+				4A89BB7C2900040700916061 /* DownloadsViewController.swift in Sources */,
 				4A89BB612900011900916061 /* AppDelegate.swift in Sources */,
 				4A89BB632900011900916061 /* SceneDelegate.swift in Sources */,
+				4A89BB78290003BA00916061 /* UpcomingViewController.swift in Sources */,
+				4A89BB762900038A00916061 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
