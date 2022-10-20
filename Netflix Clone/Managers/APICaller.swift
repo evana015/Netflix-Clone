@@ -80,8 +80,27 @@ class APICaller {
         task.resume()
     }
     
+    func getPopularMovies(compeltion: @escaping (Result<[Movie], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/popular?api_key=\(Constants.API_KEY)") else {return}
+        
+        //Get data
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            //Convert to JSON Object
+            do {
+                //Using TrendingMovies as it has the same structure
+                let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
+                compeltion(.success(results.results))
+            } catch {
+                compeltion(.failure(error))
+            }
+        }
+        task.resume()
+    }
 }
 
-//https://api.themoviedb.org/3/movie/popular?api_key=
 //https://api.themoviedb.org/3/movie/top_rated?api_key=
 

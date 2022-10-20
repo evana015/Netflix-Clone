@@ -51,25 +51,34 @@ class HomeViewController: UIViewController {
     }
     
     private func getData() {
-//        APICaller.shared.getTrendingMovies { results in
-//            switch results {
-//                case .success(let movies):
-//                    //print(movies) debug purposes
-//                case .failure(let error):
-//                    //print(error) debug purposes
+//            APICaller.shared.getTrendingMovies { results in
+//                switch results {
+//                    case .success(let Movies):
+//                        //print(Movies) debug purposes
+//                    case .failure(let error):
+//                        //print(error) debug purposes
+//                }
 //            }
-//        }
 //
-//        APICaller.shared.getTrendingTVShows { results in
-//            switch results {
-//                case .success(let TVShows):
-//                    //print(TVShows) debug purposes
-//                case .failure(let error):
-//                    //print(error) debug purposes
+//            APICaller.shared.getTrendingTVShows { results in
+//                switch results {
+//                    case .success(let TVShows):
+//                        print(TVShows)
+//                    case .failure(let error):
+//                        print(error)
+//                }
 //            }
-//        }
+//
+//            APICaller.shared.getUpcomingMovies { results in
+//                switch results {
+//                case .success(let Movies):
+//                    print(Movies)
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
         
-        APICaller.shared.getUpcomingMovies { results in
+        APICaller.shared.getPopularMovies { results in
             switch results {
             case .success(let movies):
                 print(movies)
@@ -78,7 +87,6 @@ class HomeViewController: UIViewController {
             }
         }
     }
-
 }
 
 //Using extension to keep code clean
