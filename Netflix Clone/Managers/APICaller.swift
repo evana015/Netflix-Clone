@@ -33,7 +33,7 @@ class APICaller {
                 let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
                 compeltion(.success(results.results))
             } catch {
-                compeltion(.failure(error))
+                compeltion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
@@ -53,7 +53,7 @@ class APICaller {
                 let results = try JSONDecoder().decode(TrendingTVResponse.self, from: data)
                 compeltion(.success(results.results))
             } catch {
-                compeltion(.failure(error))
+                compeltion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
@@ -74,7 +74,7 @@ class APICaller {
                 let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
                 compeltion(.success(results.results))
             } catch {
-                compeltion(.failure(error))
+                compeltion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
@@ -116,7 +116,7 @@ class APICaller {
                 let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
                 compeltion(.success(results.results))
             } catch {
-                compeltion(.failure(error))
+                compeltion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
