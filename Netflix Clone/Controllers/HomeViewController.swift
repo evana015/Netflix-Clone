@@ -77,8 +77,17 @@ class HomeViewController: UIViewController {
 //                    print(error)
 //                }
 //            }
+//
+//        APICaller.shared.getPopularMovies { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
-        APICaller.shared.getPopularMovies { results in
+        APICaller.shared.getTopRatedMovies { results in
             switch results {
             case .success(let movies):
                 print(movies)
