@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles: [String] = ["Popular", "Trending Movies", "Trending Tv", "Top Rated", "Upcoming Movies"]
+    let sectionTitles: [String] = [ "Trending Movies", "Trending TV", "Popular Movies", "Top Rated", "Upcoming Movies"]
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -29,6 +29,8 @@ class HomeViewController: UIViewController {
         
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         homeFeedTable.tableHeaderView = headerView
+        
+        getData()
     }
     
     private func configureNavbar() {
@@ -47,7 +49,53 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
-
+    
+    private func getData() {
+//            APICaller.shared.getTrendingMovies { results in
+//                switch results {
+//                    case .success(let Movies):
+//                        //print(Movies) debug purposes
+//                    case .failure(let error):
+//                        //print(error) debug purposes
+//                }
+//            }
+//
+//            APICaller.shared.getTrendingTVShows { results in
+//                switch results {
+//                    case .success(let TVShows):
+//                        print(TVShows)
+//                    case .failure(let error):
+//                        print(error)
+//                }
+//            }
+//
+//            APICaller.shared.getUpcomingMovies { results in
+//                switch results {
+//                case .success(let Movies):
+//                    print(Movies)
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//
+//        APICaller.shared.getPopularMovies { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//
+//        APICaller.shared.getTopRatedMovies { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+    }
 }
 
 //Using extension to keep code clean
@@ -85,7 +133,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .white
-        header.textLabel?.text = header.textLabel?.text?.localizedCapitalized
+        header.textLabel?.text = header.textLabel?.text?.capitiliseFirstLetter()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
