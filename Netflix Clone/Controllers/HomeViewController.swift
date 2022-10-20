@@ -7,6 +7,14 @@
 
 import UIKit
 
+enum Sections: Int {
+    case TrendingMovies = 0
+    case TrendingTVShows = 1
+    case PopularMovies = 2
+    case TopRated = 3
+    case UpcomingMovies = 4
+}
+
 class HomeViewController: UIViewController {
     
     let sectionTitles: [String] = [ "Trending Movies", "Trending TV", "Popular Movies", "Top Rated", "Upcoming Movies"]
@@ -30,7 +38,6 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         homeFeedTable.tableHeaderView = headerView
         
-        getData()
     }
     
     private func configureNavbar() {
@@ -50,52 +57,6 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
-    private func getData() {
-//            APICaller.shared.getTrendingMovies { results in
-//                switch results {
-//                    case .success(let Movies):
-//                        //print(Movies) debug purposes
-//                    case .failure(let error):
-//                        //print(error) debug purposes
-//                }
-//            }
-//
-//            APICaller.shared.getTrendingTVShows { results in
-//                switch results {
-//                    case .success(let TVShows):
-//                        print(TVShows)
-//                    case .failure(let error):
-//                        print(error)
-//                }
-//            }
-//
-//            APICaller.shared.getUpcomingMovies { results in
-//                switch results {
-//                case .success(let Movies):
-//                    print(Movies)
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
-//
-//        APICaller.shared.getPopularMovies { results in
-//            switch results {
-//            case .success(let movies):
-//                print(movies)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//
-        APICaller.shared.getTopRatedMovies { results in
-            switch results {
-            case .success(let movies):
-                print(movies)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }
 
 //Using extension to keep code clean
