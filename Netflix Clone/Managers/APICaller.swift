@@ -38,4 +38,24 @@ class APICaller {
         }
         task.resume()
     }
+    
+    func getTrendingTVShows(compeltion: @escaping (Result<[TVShow], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.baseURL)/3/trending/tv/day?api_key=\(Constants.API_KEY)") else {return}
+        
+        //Get data
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            //Convert to JSON Object
+            do {
+                let results = try JSONDecoder().decode(TrendingTVResponse.self, from: data)
+                compeltion(.success(results.results))
+            } catch {
+                compeltion(.failure(error))
+            }
+        }
+        task.resume()
+    }
 }
