@@ -63,10 +63,10 @@ class HomeViewController: UIViewController {
     }
     
     private func getTrendingTVShows() {
-        APICaller.shared.getTrendingMovies { results in
+        APICaller.shared.getTrendingTVShows { results in
             switch results {
-                case .success(let movies):
-                    print(movies)
+                case .success(let TVShows):
+                    print(TVShows)
                 case .failure(let error):
                     print(error)
             }
