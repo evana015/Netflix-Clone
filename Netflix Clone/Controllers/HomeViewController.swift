@@ -9,8 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    let sectionTitles: [String] = ["Popular", "Trending Movies", "Trending Tv", "Top Rated", "Upcoming Movies"]
+    
     private let homeFeedTable: UITableView = {
-        
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
@@ -53,7 +54,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20   //Setting to 20 secetions
+        return sectionTitles.count   //Setting to amount of titles I have listed in the array
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,6 +74,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
