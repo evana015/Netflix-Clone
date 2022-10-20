@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles: [String] = ["Popular", "Trending Movies", "Trending TV", "Top Rated", "Upcoming Movies"]
+    let sectionTitles: [String] = [ "Trending Movies", "Trending TV", "Popular Movies", "Top Rated", "Upcoming Movies"]
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
