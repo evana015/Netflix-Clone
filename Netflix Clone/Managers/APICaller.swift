@@ -172,7 +172,7 @@ class APICaller {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             return
         }
-        guard let url = URL(string: "\(Constants.YouTubeBaseURL)q=\(query)key=\(Constants.YouTubeAPI_KEY)") else {
+        guard let url = URL(string: "\(Constants.YouTubeBaseURL)q=\(query)&key=\(Constants.YouTubeAPI_KEY)") else {
             return
         }
         //Get data
