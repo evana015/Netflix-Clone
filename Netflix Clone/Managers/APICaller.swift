@@ -168,7 +168,7 @@ class APICaller {
         task.resume()
     }
     
-    func getMovie(with query: String, compeltion: @escaping (Result<VideoElement, Error>) -> Void) {
+    func getYouTubeResult(with query: String, compeltion: @escaping (Result<VideoElement, Error>) -> Void) {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             return
         }
