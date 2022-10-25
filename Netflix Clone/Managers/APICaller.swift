@@ -30,7 +30,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -50,7 +50,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -70,7 +70,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -90,7 +90,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -110,7 +110,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -130,7 +130,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -157,7 +157,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 compeltion(.success(results.results))
@@ -181,7 +181,7 @@ class APICaller {
                 return
             }
             
-            //Convert to JSON Object
+            //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(YouTubeSearchResponse.self, from: data)
                 print(results)
