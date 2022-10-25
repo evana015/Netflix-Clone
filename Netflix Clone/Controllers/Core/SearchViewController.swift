@@ -36,6 +36,8 @@ class SearchViewController: UIViewController {
         
         navigationItem.searchController = searchController
         
+        navigationController?.navigationBar.tintColor = .white
+        
         fetchDiscoverMovies()
     }
        
@@ -78,6 +80,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 130
     }
 }
