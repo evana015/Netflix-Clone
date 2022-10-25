@@ -168,7 +168,7 @@ class APICaller {
         task.resume()
     }
     
-    func getMovie(with query: String) {
+    func getMovie(with query: String, compeltion: @escaping (Result<VideoElement, Error>) -> Void) {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             return
         }
@@ -183,7 +183,7 @@ class APICaller {
             
             //Convert to JSON Object
             do {
-                let results = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                let results = try JSONDecoder().decode(YouTubeSearchResponse.self, from: data)
                 print(results)
             } catch {
                 print(error.localizedDescription)
