@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0B14BE29082B350096295C /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B14BD29082B350096295C /* SearchResultsViewController.swift */; };
 		4A89BB612900011900916061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB602900011900916061 /* AppDelegate.swift */; };
 		4A89BB632900011900916061 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB622900011900916061 /* SceneDelegate.swift */; };
 		4A89BB652900011900916061 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB642900011900916061 /* MainTabBarViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A0B14BD29082B350096295C /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		4A89BB5D2900011900916061 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A89BB602900011900916061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A89BB622900011900916061 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4A89BB77290003BA00916061 /* UpcomingViewController.swift */,
 				4A89BB79290003E700916061 /* SearchViewController.swift */,
 				4A89BB7B2900040700916061 /* DownloadsViewController.swift */,
+				4A0B14BD29082B350096295C /* SearchResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				4A89BB7C2900040700916061 /* DownloadsViewController.swift in Sources */,
 				4A89BB612900011900916061 /* AppDelegate.swift in Sources */,
 				4A89BB8F2901B14C00916061 /* TitleCollectionViewCell.swift in Sources */,
+				4A0B14BE29082B350096295C /* SearchResultsViewController.swift in Sources */,
 				4A89BB8B29019D4300916061 /* Extensions.swift in Sources */,
 				4A89BB632900011900916061 /* SceneDelegate.swift in Sources */,
 				4A89BB78290003BA00916061 /* UpcomingViewController.swift in Sources */,
