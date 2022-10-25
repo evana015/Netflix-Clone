@@ -65,6 +65,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0B14BF29082B790096295C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A89BB752900038A00916061 /* HomeViewController.swift */,
+				4A89BB77290003BA00916061 /* UpcomingViewController.swift */,
+				4A89BB79290003E700916061 /* SearchViewController.swift */,
+				4A89BB7B2900040700916061 /* DownloadsViewController.swift */,
+				4A89BB642900011900916061 /* MainTabBarViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4A0B14C029082BAC0096295C /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4A0B14BD29082B350096295C /* SearchResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		4A89BB542900011900916061 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +112,6 @@
 				4A89BB742900034300916061 /* Controllers */,
 				4A89BB602900011900916061 /* AppDelegate.swift */,
 				4A89BB622900011900916061 /* SceneDelegate.swift */,
-				4A89BB642900011900916061 /* MainTabBarViewController.swift */,
 				4A89BB692900011B00916061 /* Assets.xcassets */,
 				4A89BB6B2900011B00916061 /* LaunchScreen.storyboard */,
 				4A89BB6E2900011B00916061 /* Info.plist */,
@@ -103,11 +122,8 @@
 		4A89BB742900034300916061 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A89BB752900038A00916061 /* HomeViewController.swift */,
-				4A89BB77290003BA00916061 /* UpcomingViewController.swift */,
-				4A89BB79290003E700916061 /* SearchViewController.swift */,
-				4A89BB7B2900040700916061 /* DownloadsViewController.swift */,
-				4A0B14BD29082B350096295C /* SearchResultsViewController.swift */,
+				4A0B14C029082BAC0096295C /* General */,
+				4A0B14BF29082B790096295C /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
