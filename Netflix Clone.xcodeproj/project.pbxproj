@@ -24,6 +24,7 @@
 		4A89BB8F2901B14C00916061 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB8E2901B14C00916061 /* TitleCollectionViewCell.swift */; };
 		4A89BB922901B36D00916061 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A89BB912901B36D00916061 /* SDWebImage */; };
 		4A89BB942901B36D00916061 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A89BB932901B36D00916061 /* SDWebImageMapKit */; };
+		4A89BB962907F79400916061 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89BB952907F79400916061 /* TitleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4A89BB882901995000916061 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		4A89BB8A29019D4300916061 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4A89BB8E2901B14C00916061 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		4A89BB952907F79400916061 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				4A89BB822900105B00916061 /* CollectionViewTableViewCell.swift */,
 				4A89BB8429001DB100916061 /* HeroHeaderUIView.swift */,
 				4A89BB8E2901B14C00916061 /* TitleCollectionViewCell.swift */,
+				4A89BB952907F79400916061 /* TitleTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A89BB962907F79400916061 /* TitleTableViewCell.swift in Sources */,
 				4A89BB7A290003E700916061 /* SearchViewController.swift in Sources */,
 				4A89BB652900011900916061 /* MainTabBarViewController.swift in Sources */,
 				4A89BB832900105B00916061 /* CollectionViewTableViewCell.swift in Sources */,
