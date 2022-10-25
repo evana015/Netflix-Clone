@@ -184,8 +184,9 @@ class APICaller {
             //Decode JSON Object
             do {
                 let results = try JSONDecoder().decode(YouTubeSearchResponse.self, from: data)
-                print(results)
+                compeltion(.success(results.items[0]))
             } catch {
+                compeltion(.failure(error))
                 print(error.localizedDescription)
             }
         }
