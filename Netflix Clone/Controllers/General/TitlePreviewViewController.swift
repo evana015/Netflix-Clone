@@ -8,12 +8,14 @@
 import UIKit
 import WebKit
 
+//Could add more data that is stored in Title model later
 class TitlePreviewViewController: UIViewController {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.text = "Harry Potter"
         return label
     }()
     
@@ -22,6 +24,7 @@ class TitlePreviewViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 0
+        label.text = "This is a movie u know"
         return label
     }()
     
