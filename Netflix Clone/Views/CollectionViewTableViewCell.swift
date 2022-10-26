@@ -48,7 +48,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     public func configure(with titles: [Title]) {
         self.titles = titles
-        //Following casuses an error with latest iterations (iphone 14, iphone 14 pro...)
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
