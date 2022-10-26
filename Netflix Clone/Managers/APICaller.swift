@@ -8,9 +8,9 @@
 import Foundation
 
 struct Constants {
-    static let API_KEY = ProcessInfo.processInfo.environment["TMB_API_KEY"]
+    static let TMD_API_KEY = ConfigValues.get().TMD_API_KEY
     static let baseURL = "https://api.themoviedb.org"
-    static let YouTubeAPI_KEY = ProcessInfo.processInfo.environment["YouTubeAPI_KEY"]
+    static let YouTube_API_KEY = ConfigValues.get().YouTube_API_KEY
     static let YouTubeBaseURL = "https://youtube.googleapis.com/youtube/v3/search?"
 }
 
@@ -22,7 +22,7 @@ class APICaller {
     static let shared = APICaller()
     
     func getTrendingMovies(compeltion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/trending/movie/day?api_key=\(Constants.API_KEY ?? "")") else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/trending/movie/day?api_key=\(Constants.TMD_API_KEY )") else {return}
         
         //Get data
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -42,7 +42,7 @@ class APICaller {
     }
     
     func getTrendingTVShows(compeltion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/trending/tv/day?api_key=\(Constants.API_KEY ?? "")") else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/trending/tv/day?api_key=\(Constants.TMD_API_KEY )") else {return}
         
         //Get data
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -62,7 +62,7 @@ class APICaller {
     }
     
     func getUpcomingMovies(compeltion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/movie/upcoming?api_key=\(Constants.API_KEY ?? "")") else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/upcoming?api_key=\(Constants.TMD_API_KEY )") else {return}
         
         //Get data
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -82,7 +82,7 @@ class APICaller {
     }
     
     func getPopularMovies(compeltion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/movie/popular?api_key=\(Constants.API_KEY ?? "")") else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/popular?api_key=\(Constants.TMD_API_KEY )") else {return}
         
         //Get data
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -102,7 +102,7 @@ class APICaller {
     }
     
     func getTopRatedMovies(compeltion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/movie/top_rated?api_key=\(Constants.API_KEY ?? "")") else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/top_rated?api_key=\(Constants.TMD_API_KEY )") else {return}
         
         //Get data
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -122,7 +122,7 @@ class APICaller {
     }
     
     func getDiscoverMovies(compeltion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/discover/movie?api_key=\(Constants.API_KEY ?? "")&language=en-GB&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate") else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/discover/movie?api_key=\(Constants.TMD_API_KEY )&language=en-GB&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate") else {return}
         
         //Get data
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -147,7 +147,7 @@ class APICaller {
             return
         }
         
-        guard let url = URL(string: "\(Constants.baseURL)/3/search/movie?api_key=\(Constants.API_KEY ?? "")&query=\(query)") else {
+        guard let url = URL(string: "\(Constants.baseURL)/3/search/movie?api_key=\(Constants.TMD_API_KEY )&query=\(query)") else {
             return
         }
         
@@ -172,7 +172,7 @@ class APICaller {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             return
         }
-        guard let url = URL(string: "\(Constants.YouTubeBaseURL)q=\(query)&key=\(Constants.YouTubeAPI_KEY ?? "")") else {
+        guard let url = URL(string: "\(Constants.YouTubeBaseURL)q=\(query)&key=\(Constants.YouTube_API_KEY ?? "")") else {
             return
         }
         //Get data
