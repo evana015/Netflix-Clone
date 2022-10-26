@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol CollectionViewTableViewCellDelegate: AnyObject {
+    func CollectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel)
+}
+
 class CollectionViewTableViewCell: UITableViewCell {
     
     static let identifier = "CollectionViewTableViewCell"
 
+    weak var delegate: CollectionViewTableViewCellDelegate?
+    
     private var titles: [Title] = [Title]()
 
     private let collectionView: UICollectionView = {
@@ -42,7 +48,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     public func configure(with titles: [Title]) {
         self.titles = titles
-        //Following casuses an error with latest iterations (iphone 14, iphone 14 pro...)
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -78,10 +83,18 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
             return
         }
         
-        APICaller.shared.getYouTubeResult(with: titleName + " trailer") { result in
+        APICaller.shared.getYouTubeResult(with: titleName + " trailer") { [weak self] result in
             switch result {
             case .success(let videoElement):
-                print(videoElement.id)
+                let title = self?.titles[indexPath.row]
+                guard let titleOveriview = title?.overview else {
+                    return
+                }
+                guard let strongSelf = self else {
+                    return
+                }
+                let viewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: titleOveriview)
+                self?.delegate?.CollectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
             case .failure(let error):
                 print(error.localizedDescription)
             }
