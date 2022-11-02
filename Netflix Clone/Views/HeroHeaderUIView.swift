@@ -9,7 +9,7 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
-    var titleInUse: Title = Title(id: 0, media_type: nil, original_name: nil, original_title: nil, poster_path: nil, overview: nil, vote_count: 0, release_date: nil, vote_average: 0)
+    private var titleInUse: Title = Title(id: 0, media_type: nil, original_name: nil, original_title: nil, poster_path: nil, overview: nil, vote_count: 0, release_date: nil, vote_average: 0)
     
     private let downloadButton: UIButton = {
         let button = UIButton()
@@ -76,6 +76,10 @@ class HeroHeaderUIView: UIView {
     public func configure(with model: TitleViewModel) {
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)") else {return}
         heroImageView.sd_setImage(with: url, completed: nil)
+    }
+    
+    public func setTitleInUse(with selectedTitle: Title) {
+        self.titleInUse = selectedTitle
     }
     
     @objc private func download() {
