@@ -29,6 +29,26 @@ class DownloadsViewController: UIViewController {
         downloadedTable.dataSource = self
         
         view.addSubview(downloadedTable)
+        fetchLocalStorageForDownload()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        downloadedTable.frame = view.bounds
+    }
+    
+    private func fetchLocalStorageForDownload() {
+        DataPersistenceManager.shared.fetchingTitleFromDB { [weak self] result in
+            switch result {
+            case .success(let titles):
+                self?.titles = titles
+                DispatchQueue.main.async { [weak self] in
+                    self?.downloadedTable.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
 }
