@@ -10,7 +10,9 @@ import WebKit
 
 //Could add more data that is stored in Title model later
 class TitlePreviewViewController: UIViewController {
-
+    
+    private var titleInUse: Title = Title(id: 0, media_type: nil, original_name: nil, original_title: nil, poster_path: nil, overview: nil, vote_count: 0, release_date: nil, vote_average: 0)
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +53,7 @@ class TitlePreviewViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)
         view.addSubview(downloadButton)
-        
+        downloadButton.addTarget(self, action: #selector(downloadTitlePreviewed), for: .touchUpInside)
         configureConstraints()
     }
     
@@ -96,6 +98,21 @@ class TitlePreviewViewController: UIViewController {
         }
         
         webView.load(URLRequest(url: url))
+    }
+    
+    @objc private func downloadTitlePreviewed() {
+        DataPersistenceManager.shared.downloadTitleWith(model: titleInUse) { result in
+            switch result {
+            case .success():
+                NotificationCenter.default.post(name: NSNotification.Name("Downloaded"), object: nil)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func setTitleInUse(with selectedTitle: Title){
+        titleInUse = selectedTitle
     }
     
 }

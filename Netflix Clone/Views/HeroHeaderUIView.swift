@@ -54,7 +54,7 @@ class HeroHeaderUIView: UIView {
         addGradient()
         addSubview(playButton)
         addSubview(downloadButton)
-        downloadButton.addTarget(self, action: #selector(download), for: .touchUpInside)
+        downloadButton.addTarget(self, action: #selector(downloadHeroHeaderTitle), for: .touchUpInside)
         applyConstraints()
     }
     
@@ -82,7 +82,7 @@ class HeroHeaderUIView: UIView {
         self.titleInUse = selectedTitle
     }
     
-    @objc private func download() {
+    @objc private func downloadHeroHeaderTitle() {
         DataPersistenceManager.shared.downloadTitleWith(model: titleInUse) { result in
             switch result {
             case .success():
