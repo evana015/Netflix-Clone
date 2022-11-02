@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class DataPersistenceManager {
+    
+    static let shared = DataPersistenceManager()
+    
+    func downloadTitleWith(Model: Title, completion: @escaping (Result <Void, Error>) -> Void) {
+        
+    }
+}
