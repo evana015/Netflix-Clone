@@ -85,6 +85,7 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
                 DispatchQueue.main.async { [weak self] in
                     let vc = TitlePreviewViewController()
                     vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    vc.setTitleInUse(with: title)
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             case .failure(let error):
