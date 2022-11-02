@@ -100,6 +100,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 DispatchQueue.main.async { [weak self] in
                     let vc = TitlePreviewViewController()
                     vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    vc.setTitleInUse(with: title)
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             case .failure(let error):
@@ -136,10 +137,11 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
         }
     }
     
-    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
+    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel, title: Title) {
         DispatchQueue.main.async { [weak self] in
             let vc = TitlePreviewViewController()
             vc.configure(with: viewModel)
+            vc.setTitleInUse(with: title)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
