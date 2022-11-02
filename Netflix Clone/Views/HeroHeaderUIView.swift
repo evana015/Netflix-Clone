@@ -9,6 +9,8 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
+    var titleInUse: Title = Title(id: 0, media_type: nil, original_name: nil, original_title: nil, poster_path: nil, overview: nil, vote_count: 0, release_date: nil, vote_average: 0)
+    
     private let downloadButton: UIButton = {
         let button = UIButton()
         button.setTitle("Download", for: .normal)
@@ -33,7 +35,6 @@ class HeroHeaderUIView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "HeroImage")
         return imageView
     }()
     
@@ -53,6 +54,7 @@ class HeroHeaderUIView: UIView {
         addGradient()
         addSubview(playButton)
         addSubview(downloadButton)
+        downloadButton.addTarget(self, action: #selector(download), for: .touchUpInside)
         applyConstraints()
     }
     
@@ -74,6 +76,17 @@ class HeroHeaderUIView: UIView {
     public func configure(with model: TitleViewModel) {
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)") else {return}
         heroImageView.sd_setImage(with: url, completed: nil)
+    }
+    
+    @objc private func download() {
+        DataPersistenceManager.shared.downloadTitleWith(model: titleInUse) { result in
+            switch result {
+            case .success():
+                NotificationCenter.default.post(name: NSNotification.Name("Downloaded"), object: nil)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     override func layoutSubviews() {
