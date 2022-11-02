@@ -101,13 +101,17 @@ class TitlePreviewViewController: UIViewController {
     }
     
     @objc private func downloadTitlePreviewed() {
-        DataPersistenceManager.shared.downloadTitleWith(model: titleInUse) { result in
-            switch result {
-            case .success():
-                NotificationCenter.default.post(name: NSNotification.Name("Downloaded"), object: nil)
-            case .failure(let error):
-                print(error.localizedDescription)
+        if titleInUse.original_title != nil {   // Could add a conditional to look for duplicates as well
+            DataPersistenceManager.shared.downloadTitleWith(model: titleInUse) { result in
+                switch result {
+                case .success():
+                    NotificationCenter.default.post(name: NSNotification.Name("Downloaded"), object: nil)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
+        } else {
+            print("Invalid Download Attempt")
         }
     }
     
